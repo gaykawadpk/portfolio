@@ -322,32 +322,33 @@ statNumbers.forEach(el => counterObserver.observe(el));
 const filterBtns = document.querySelectorAll('.filter-btn');
 const galleryItems = document.querySelectorAll('.gallery-item');
 
+function applyFilter(filter) {
+  galleryItems.forEach((item, index) => {
+    const categories = item.getAttribute('data-category').split(' ');
+    const shouldShow = categories.includes(filter);
+
+    if (shouldShow) {
+      item.classList.remove('hidden');
+      item.style.display = '';
+      item.style.animationDelay = (index * 0.05) + 's';
+    } else {
+      item.classList.add('hidden');
+      item.style.display = 'none';
+    }
+  });
+}
+
 filterBtns.forEach(btn => {
   btn.addEventListener('click', () => {
     filterBtns.forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-
-    const filter = btn.getAttribute('data-filter');
-
-    galleryItems.forEach((item, index) => {
-      const categories = item.getAttribute('data-category').split(' ');
-      const shouldShow = categories.includes(filter);
-      
-      if (shouldShow) {
-        item.classList.remove('hidden');
-        item.style.display = '';
-        item.style.animationDelay = (index * 0.05) + 's';
-      } else {
-        item.classList.add('hidden');
-        setTimeout(() => {
-          if (item.classList.contains('hidden')) {
-            item.style.display = 'none';
-          }
-        }, 400);
-      }
-    });
+    applyFilter(btn.getAttribute('data-filter'));
   });
 });
+
+// Apply the default active filter on page load
+const defaultFilter = document.querySelector('.filter-btn.active');
+if (defaultFilter) applyFilter(defaultFilter.getAttribute('data-filter'));
 
 // ============================
 // 🎬 CINEMATIC LIGHTBOX
