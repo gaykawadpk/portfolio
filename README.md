@@ -42,7 +42,7 @@ portfolio/
 ├── 404.html          # Themed 404 page
 ├── robots.txt        # SEO
 ├── sitemap.xml       # SEO
-├── images/           # 22 photos + profile image
+├── images/           # 51 photos + profile image
 └── README.md
 ```
 

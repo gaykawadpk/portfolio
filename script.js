@@ -331,8 +331,7 @@ filterBtns.forEach(btn => {
 
     galleryItems.forEach((item, index) => {
       const categories = item.getAttribute('data-category').split(' ');
-      const shouldShow = (filter === 'all' && categories.includes('all')) ||
-                         (filter !== 'all' && categories.includes(filter));
+      const shouldShow = categories.includes(filter);
       
       if (shouldShow) {
         item.classList.remove('hidden');
