@@ -550,8 +550,11 @@ const cipherChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:,./<>?';
 
 sectionTitles.forEach(title => {
   const originalText = title.textContent;
+  let isDecoding = false;
 
   title.addEventListener('mouseenter', () => {
+    if (isDecoding) return;
+    isDecoding = true;
     let iterations = 0;
     const interval = setInterval(() => {
       title.textContent = originalText.split('').map((char, idx) => {
@@ -564,6 +567,7 @@ sectionTitles.forEach(title => {
       if (iterations > originalText.length) {
         clearInterval(interval);
         title.textContent = originalText;
+        isDecoding = false;
       }
     }, 40);
   });
@@ -672,3 +676,16 @@ console.log('%c"When you have eliminated the impossible, whatever remains must b
 console.log('%c— Sherlock Holmes (& Puja Kumari, during debugging)', 'font-size: 11px; color: #666;');
 console.log('%c\n🎹 Keyboard Shortcuts:', 'font-size: 13px; color: #c9a84c; font-weight: bold;');
 console.log('%c  1-5: Navigate sections | D: Toggle theme | ←→: Lightbox nav | ↑↑↓↓←→←→BA: Konami Code', 'font-size: 11px; color: #aaa;');
+
+// ============================
+// ⬆️ BACK TO TOP BUTTON
+// ============================
+const backToTop = document.getElementById('backToTop');
+if (backToTop) {
+  window.addEventListener('scroll', () => {
+    backToTop.classList.toggle('visible', window.scrollY > 400);
+  });
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}

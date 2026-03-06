@@ -723,7 +723,15 @@ img { max-width: 100%; display: block; }
   }
 }
 
-/* gallery-item base — see enhanced film strip gallery section */
+/* gallery-item base styles */
+.gallery-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  cursor: crosshair;
+  transition: all 0.5s var(--ease-out);
+  background: var(--bg-card);
+}
 
 .gallery-item img {
   width: 100%;
@@ -743,17 +751,6 @@ img { max-width: 100%; display: block; }
   width: 0;
   height: 0;
   overflow: hidden;
-}
-
-.gallery-placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  color: rgba(255,255,255,0.9);
-  font-weight: 600;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.3);
-  min-height: 220px;
 }
 
 /* gallery-overlay — see enhanced EVIDENCE TAG version below */
@@ -1009,7 +1006,18 @@ img { max-width: 100%; display: block; }
   .skills-grid { grid-template-columns: 1fr; }
   .poems-grid { grid-template-columns: 1fr; }
   .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gallery-item img { min-height: 160px; max-height: 250px; }
   .hero-cta { flex-direction: column; align-items: center; }
+  .gallery-filters { gap: 8px; }
+  .filter-btn { padding: 6px 14px; font-size: 0.78rem; }
+  .hero-content { padding: 32px 20px; margin: 0 16px; }
+  .hero-tagline { font-size: 0.95rem; }
+  .lightbox-nav { width: 36px; height: 36px; font-size: 1rem; }
+  .lightbox-prev { left: 8px; }
+  .lightbox-next { right: 8px; }
+  .lightbox-caption { bottom: 20px; font-size: 1rem; }
+  .about::before, .poetry::before { font-size: 0.75rem; padding: 0 16px; }
+  .back-to-top { bottom: 16px; right: 16px; width: 40px; height: 40px; }
 }
 
 /* ============================
@@ -1955,3 +1963,64 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 768px) { .kbd-hint { display: none; } }
+
+/* ============================
+   ♿ SKIP LINK (Accessibility)
+   ============================ */
+.skip-link {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+  z-index: 100000;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+  color: #fff;
+}
+
+/* ============================
+   ⬆️ BACK TO TOP BUTTON
+   ============================ */
+.back-to-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s var(--ease-out);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(10px);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--accent-glow);
+}

@@ -4,12 +4,39 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PK. — Senior SW Engineer · Photographer · Poet | The Art of Deduction</title>
+  <meta name="description" content="Puja Kumari — Senior Software Engineer with 7+ years in C/C++, Linux, embedded systems & automotive. Photographer, poet, and Sherlock enthusiast." />
+  <meta name="keywords" content="Puja Kumari, software engineer, embedded systems, C++, Linux, automotive, photographer, poet, portfolio" />
+  <meta name="author" content="Puja Kumari" />
+  <meta name="theme-color" content="#0a0a0f" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="PK. — Senior SW Engineer · Photographer · Poet" />
+  <meta property="og:description" content="7+ years cracking embedded systems like Sherlock cracks cases — C/C++, Linux, automotive infotainment & telematics." />
+  <meta property="og:image" content="images/puja_profile.jpeg" />
+  <meta property="og:url" content="https://gaykawadpk.github.io/portfolio/" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="PK. — Senior SW Engineer · Photographer · Poet" />
+  <meta name="twitter:description" content="7+ years cracking embedded systems like Sherlock cracks cases." />
+  <meta name="twitter:image" content="images/puja_profile.jpeg" />
+
+  <!-- Favicon (gold magnifying glass) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>" />
+
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Preload critical image -->
+  <link rel="preload" href="images/puja_profile.jpeg" as="image" />
 </head>
 <body>
+  <!-- ♿ SKIP TO CONTENT (accessibility) -->
+  <a href="#about" class="skip-link">Skip to content</a>
+
   <!-- 🎬 CINEMATIC PAGE LOADER -->
   <div class="page-loader" id="pageLoader">
     <div class="loader-magnifier"></div>
@@ -130,8 +157,8 @@
 
         <!-- Embedded & Systems -->
         <div class="skill-card" data-category="embedded">
-          <div class="skill-icon">�</div>
-          <h3>The Mind Palace (Embedded & Systems)</h3>
+          <div class="skill-icon">🧠</div>
+          <h3>The Mind Palace (Embedded &amp; Systems)</h3>
           <div class="skill-tags">
             <span class="tag">Linux Systems</span>
             <span class="tag">Embedded C/C++</span>
@@ -172,7 +199,7 @@
 
         <!-- Testing & Process -->
         <div class="skill-card" data-category="testing">
-          <div class="skill-icon">�️</div>
+          <div class="skill-icon">🛡️</div>
           <h3>The Art of Root Cause Analysis</h3>
           <div class="skill-tags">
             <span class="tag">Unit Testing</span>
@@ -263,7 +290,7 @@
   <section class="section gallery" id="gallery">
     <div class="container">
       <h2 class="section-title">The Evidence Wall 📸</h2>
-      <p class="section-subtitle">"You see, but you do not observe." I observe. And I press the shutter.</p>
+      <p class="section-subtitle">"You see, but you do not observe." I observe. And I press the shutter. <a href="https://attheedgeofuniverse.blogspot.com" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem;">View full gallery →</a></p>
 
       <div class="gallery-filters">
         <button class="filter-btn active" data-filter="all">All Clues</button>
@@ -438,7 +465,7 @@
   <section class="section poetry" id="poetry">
     <div class="container">
       <h2 class="section-title">Confessions 🕯️</h2>
-      <p class="section-subtitle">Verses from late nights and quiet moments</p>
+      <p class="section-subtitle">Verses from late nights and quiet moments. <a href="https://tellinguntoldstory.blogspot.com" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem;">Read more on the blog →</a></p>
 
       <div class="poems-grid">
         <article class="poem-card">
@@ -530,18 +557,25 @@
             <div class="contact-icon">💼</div>
             <div>
               <h4>The Professional Network</h4>
-              <a href="https://linkedin.com/in/puja-kumari-7002b8116" target="_blank">linkedin.com/in/puja-kumari</a>
+              <a href="https://linkedin.com/in/puja-kumari-7002b8116" target="_blank" rel="noopener noreferrer">linkedin.com/in/puja-kumari</a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">�</div>
+            <div class="contact-icon">🐙</div>
+            <div>
+              <h4>The Code Vault</h4>
+              <a href="https://github.com/gaykawadpk" target="_blank" rel="noopener noreferrer">github.com/gaykawadpk</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📱</div>
             <div>
               <h4>The Direct Line</h4>
               <a href="tel:+918838675934">+91 8838675934</a>
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">�</div>
+            <div class="contact-icon">📍</div>
             <div>
               <h4>Current Crime Scene</h4>
               <span style="color: var(--text-primary);">Bengaluru, India</span>
@@ -577,6 +611,11 @@
       <p>&copy; 2026 Puja Kumari. Built with deduction, Earl Grey, and a long list of ex-frameworks. <em>"The game is on."</em></p>
     </div>
   </footer>
+
+  <!-- ⬆️ BACK TO TOP -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
 
   <!-- ===== LIGHTBOX (CINEMATIC) ===== -->
   <div class="lightbox" id="lightbox">
