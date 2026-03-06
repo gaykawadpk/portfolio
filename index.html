@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PK. — Senior SW Engineer · Photographer · Poet | The Art of Deduction</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo">PK<span class="accent">.</span></a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Case File</a></li>
+        <li><a href="#skills">Methods</a></li>
+        <li><a href="#gallery">Evidence Wall</a></li>
+        <li><a href="#poetry">Confessions</a></li>
+        <li><a href="#contact">221B Mailbox</a></li>
+      </ul>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hero">
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+      <p class="hero-greeting animate-in">🔍 The game is on. I'm</p>
+      <h1 class="hero-name animate-in delay-1">Puja Kumari</h1>
+      <div class="hero-roles animate-in delay-2">
+        <span class="role-typing" id="typingRole"></span><span class="cursor">|</span>
+      </div>
+      <p class="hero-tagline animate-in delay-3">7+ years cracking embedded systems like Sherlock cracks cases — C/C++, Linux, automotive infotainment &amp; telematics.<br/>"Long story short, I survived." — every production deploy, ever.</p>
+      <div class="hero-cta animate-in delay-4">
+        <a href="#skills" class="btn btn-primary">🔎 Examine the Evidence</a>
+        <a href="#contact" class="btn btn-outline">📨 Send a Telegram to 221B</a>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section about" id="about">
+    <div class="container">
+      <h2 class="section-title">Case File 🕵️</h2>
+      <div class="about-grid">
+        <div class="about-image">
+          <div class="image-frame">
+            <div class="placeholder-avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+              <p>Suspect's Photograph</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-text">
+          <p><strong>"When you have eliminated the impossible, whatever remains, however improbable, must be the truth."</strong> — That's how I debug embedded systems. I'm a <strong>Senior Software Engineer</strong> with 7+ years of expertise in C/C++ on Linux, specializing in automotive infotainment and telematics at <strong>Harman International</strong>.</p>
+          <p>From integrating Android Auto & CarPlay at KPIT, to building data protection middleware at Veritas, to designing power & thermal management for vehicle TCUs at Harman — I treat every system-level bug like a Sherlock case. And the photography & poetry? <em>"I'm the problem, it's me"</em> — I just can't stop capturing light and writing verses at 2 AM.</p>
+          <p><strong>B.Tech in ECE from SRM University</strong> (CGPA: 9.4) — because even my grades were trying to be a perfect 10. "This is me trying." And honestly? <em>The game has always been on.</em></p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-number" data-target="7">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Years on the Case</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="3">0</span><span class="stat-suffix"></span>
+              <span class="stat-label">Companies Served</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="200">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Scenes Captured</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number" data-target="30">0</span><span class="stat-suffix">+</span>
+              <span class="stat-label">Verses Penned</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section class="section skills" id="skills">
+    <div class="container">
+      <h2 class="section-title">Methods of Deduction 🧪</h2>
+      <p class="section-subtitle">"I never guess. It is a shocking habit — destructive to the logical faculty." But I do <code style="font-family: var(--font-mono); color: var(--accent);">printf()</code> debug a lot.</p>
+
+      <div class="skills-grid">
+        <!-- Core Languages -->
+        <div class="skill-card" data-category="languages">
+          <div class="skill-icon">🔤</div>
+          <h3>Languages I Speak (to Machines)</h3>
+          <div class="skill-tags">
+            <span class="tag">C</span>
+            <span class="tag">C++</span>
+            <span class="tag">OOPs Concepts</span>
+            <span class="tag">SOLID Principles</span>
+            <span class="tag">Design Patterns</span>
+          </div>
+        </div>
+
+        <!-- Embedded & Systems -->
+        <div class="skill-card" data-category="embedded">
+          <div class="skill-icon">�</div>
+          <h3>The Mind Palace (Embedded & Systems)</h3>
+          <div class="skill-tags">
+            <span class="tag">Linux Systems</span>
+            <span class="tag">Embedded C/C++</span>
+            <span class="tag">SPI / IPC</span>
+            <span class="tag">systemd</span>
+            <span class="tag">Power Management</span>
+            <span class="tag">Thermal Management</span>
+          </div>
+        </div>
+
+        <!-- Automotive -->
+        <div class="skill-card" data-category="automotive">
+          <div class="skill-icon">🚗</div>
+          <h3>The Case of the Infotainment (Automotive)</h3>
+          <div class="skill-tags">
+            <span class="tag">Android Auto</span>
+            <span class="tag">Apple CarPlay</span>
+            <span class="tag">MirrorLink</span>
+            <span class="tag">IVI Systems</span>
+            <span class="tag">TCU / Telematics</span>
+            <span class="tag">AGL / LXC</span>
+          </div>
+        </div>
+
+        <!-- Build & Tools -->
+        <div class="skill-card" data-category="tools">
+          <div class="skill-icon">🔬</div>
+          <h3>Instruments of Investigation</h3>
+          <div class="skill-tags">
+            <span class="tag">Git & SVN</span>
+            <span class="tag">Bitbake</span>
+            <span class="tag">CMake</span>
+            <span class="tag">JIRA & Confluence</span>
+            <span class="tag">Enterprise Architect</span>
+            <span class="tag">V Model</span>
+          </div>
+        </div>
+
+        <!-- Testing & Process -->
+        <div class="skill-card" data-category="testing">
+          <div class="skill-icon">�️</div>
+          <h3>The Art of Root Cause Analysis</h3>
+          <div class="skill-tags">
+            <span class="tag">Unit Testing</span>
+            <span class="tag">Root Cause Analysis</span>
+            <span class="tag">SDLC</span>
+            <span class="tag">Problem Solving</span>
+            <span class="tag">System Debugging</span>
+          </div>
+        </div>
+
+        <!-- Extras -->
+        <div class="skill-card" data-category="extras">
+          <div class="skill-icon">✨</div>
+          <h3>The Secret Drawer (Extras)</h3>
+          <div class="skill-tags">
+            <span class="tag">OpenAI Integration</span>
+            <span class="tag">Middleware Design</span>
+            <span class="tag">Digital eCockpit</span>
+            <span class="tag">Requirement Analysis</span>
+            <span class="tag">Design Documentation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== EXPERIENCE TIMELINE ===== -->
+      <h2 class="section-title" style="margin-top: 80px;">The Casebook 📖</h2>
+      <p class="section-subtitle">"Every case is a new adventure." Here's the trail of evidence so far.</p>
+
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content skill-card">
+            <div class="timeline-date">Mar 2022 — Present</div>
+            <h3>🏢 Senior Software Engineer · Harman International</h3>
+            <p>The current case — and the most complex one yet.</p>
+            <ul class="timeline-list">
+              <li>System-level design of TCU components — like mapping a crime scene, but with SPI buses</li>
+              <li>Power Management middleware — handling power modes like Sherlock handles mood swings</li>
+              <li>SPI interface for SOC ↔ microcontroller communication</li>
+              <li>Linux startup & shutdown orchestration via systemd</li>
+              <li>Root cause analysis of critical production issues — <em>"the game is always on"</em></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content skill-card">
+            <div class="timeline-date">Nov 2020 — Mar 2022</div>
+            <h3>🏢 Software Engineer · Veritas Technologies</h3>
+            <p>"We are never getting back together" — me, to data loss.</p>
+            <ul class="timeline-list">
+              <li>Middleware source code for data protection & backup software</li>
+              <li>C/C++ plugin development for various product features</li>
+              <li>Full SDLC involvement — requirements through testing</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content skill-card">
+            <div class="timeline-date">Oct 2017 — Nov 2020</div>
+            <h3>🏢 Software Engineer · KPIT Technologies</h3>
+            <p>Where it all began — the origin case file.</p>
+            <ul class="timeline-list">
+              <li>Integrated Android Auto, CarPlay & MirrorLink into IVI systems</li>
+              <li>Middleware design for automotive infotainment modules</li>
+              <li>Digital eCockpit on AGL using LXC containers</li>
+              <li>Requirement analysis & design docs with Enterprise Architect</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content skill-card">
+            <div class="timeline-date">2013 — 2017</div>
+            <h3>🎓 B.Tech, ECE · SRM University, Chennai</h3>
+            <p>CGPA: 9.4 — <em>"Fearless"</em> era of academic excellence.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PHOTOGRAPHY ===== -->
+  <section class="section gallery" id="gallery">
+    <div class="container">
+      <h2 class="section-title">The Evidence Wall 📸</h2>
+      <p class="section-subtitle">"You see, but you do not observe." I observe. And I press the shutter.</p>
+
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="all">All Clues</button>
+        <button class="filter-btn" data-filter="landscape">Crime Scenes (Scenic)</button>
+        <button class="filter-btn" data-filter="street">Baker Street & Beyond</button>
+        <button class="filter-btn" data-filter="nature">The Moor</button>
+        <button class="filter-btn" data-filter="abstract">Mind Palace Visions</button>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="landscape">
+          <div class="gallery-placeholder" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); aspect-ratio: 4/3;">
+            <span>🏔️ The Reichenbach View</span>
+          </div>
+          <div class="gallery-overlay">
+            <h4>The Reichenbach View</h4>
+            <p>Dramatic falls. No one fell. Probably.</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="street">
+          <div class="gallery-placeholder" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); aspect-ratio: 3/4;">
+            <span>🌆 221B After Dark</span>
+          </div>
+          <div class="gallery-overlay">
+            <h4>221B After Dark</h4>
+            <p>London fog, gas lamps, and bad decisions.</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="nature">
+          <div class="gallery-placeholder" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); aspect-ratio: 1/1;">
+            <span>🌿 The Baskerville Mist</span>
+          </div>
+          <div class="gallery-overlay">
+            <h4>The Baskerville Mist</h4>
+            <p>No hound spotted. Just vibes.</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="landscape">
+          <div class="gallery-placeholder" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%); aspect-ratio: 16/9;">
+            <span>🌅 Golden Hour on the Thames</span>
+          </div>
+          <div class="gallery-overlay">
+            <h4>Golden Hour on the Thames</h4>
+            <p>"Daylight, I only see daylight." — T. Swift, me too.</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="abstract">
+          <div class="gallery-placeholder" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); aspect-ratio: 1/1;">
+            <span>🎭 The Deduction</span>
+          </div>
+          <div class="gallery-overlay">
+            <h4>The Deduction</h4>
+            <p>What the mind palace looks like, visualized.</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="street">
+          <div class="gallery-placeholder" style="background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%); aspect-ratio: 4/3;">
+            <span>☕ Mrs. Hudson's Corner</span>
+          </div>
+          <div class="gallery-overlay">
+            <h4>Mrs. Hudson's Corner</h4>
+            <p>"I'm not your housekeeper!" But the tea is perfect.</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="nature">
+          <div class="gallery-placeholder" style="background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%); aspect-ratio: 3/4;">
+            <span>🦋 The Curious Incident</span>
+          </div>
+          <div class="gallery-overlay">
+            <h4>The Curious Incident</h4>
+            <p>The butterfly did nothing. That was the curious incident.</p>
+          </div>
+        </div>
+        <div class="gallery-item" data-category="abstract">
+          <div class="gallery-placeholder" style="background: linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%); aspect-ratio: 16/9;">
+            <span>💫 Enchanted Trails</span>
+          </div>
+          <div class="gallery-overlay">
+            <h4>Enchanted Trails</h4>
+            <p>Long exposure — "please don't ever become a stranger." — TS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== POETRY ===== -->
+  <section class="section poetry" id="poetry">
+    <div class="container">
+      <h2 class="section-title">Confessions from 221B 🕯️</h2>
+      <p class="section-subtitle">"I knew you were trouble when you walked in" — to my codebase at midnight</p>
+
+      <div class="poems-grid">
+        <article class="poem-card">
+          <div class="poem-decoration">I</div>
+          <h3 class="poem-title">The Science of Deduction (and Debugging)</h3>
+          <div class="poem-body">
+            <p>The clues are in the stack trace, Watson,<br/>
+            each line a thread I mustn't loosen,<br/>
+            I pace the floor of Baker Street,<br/>
+            where logic and the errors meet.</p>
+            <p>Eliminate the impossible first—<br/>
+            that missing comma was the worst.<br/>
+            The truth, improbable but clear:<br/>
+            the bug was in <em>line two</em>, my dear.</p>
+          </div>
+          <span class="poem-tag">elementary</span>
+        </article>
+
+        <article class="poem-card">
+          <div class="poem-decoration">II</div>
+          <h3 class="poem-title">All Too Well (in Production)</h3>
+          <div class="poem-body">
+            <p>I remember it all too well—<br/>
+            the autumn night the servers fell,<br/>
+            the dashboard red, the Slack on fire,<br/>
+            my coffee cold, the stakes much higher.</p>
+            <p>You kept the merge request like a secret,<br/>
+            I kept the hotfix like a promise.<br/>
+            "We are never ever getting back together"—<br/>
+            me, to that legacy codebase. Forever.</p>
+          </div>
+          <span class="poem-tag">fearless (era)</span>
+        </article>
+
+        <article class="poem-card">
+          <div class="poem-decoration">III</div>
+          <h3 class="poem-title">The Hound of the Baskervilles (But It's a Bug)</h3>
+          <div class="poem-body">
+            <p>Upon the moor the hound does cry—<br/>
+            or wait, that's just my build gone awry,<br/>
+            a phantom error in the mist,<br/>
+            a race condition I had missed.</p>
+            <p>I lit my pipe (okay, brewed chai),<br/>
+            and watched the failing tests go by,<br/>
+            then elementary, my dear friend:<br/>
+            an off-by-one. The case finds end.</p>
+          </div>
+          <span class="poem-tag">the game is on</span>
+        </article>
+
+        <article class="poem-card">
+          <div class="poem-decoration">IV</div>
+          <h3 class="poem-title">Blank Space (in My Editor)</h3>
+          <div class="poem-body">
+            <p>Got a long list of ex-frameworks,<br/>
+            they'll tell you I'm insane,<br/>
+            but I've got a blank <code>index.html</code>,<br/>
+            and I'll write your name.</p>
+            <p>I click the shutter, hold my breath,<br/>
+            the golden light won't last.<br/>
+            "Darling, I'm a nightmare<br/>
+            dressed like a pixel artist."</p>
+          </div>
+          <span class="poem-tag">reputation era</span>
+        </article>
+
+        <article class="poem-card">
+          <div class="poem-decoration">V</div>
+          <h3 class="poem-title">A Study in Light</h3>
+          <div class="poem-body">
+            <p>Watson never understood why I<br/>
+            would stand for hours, camera high,<br/>
+            and wait for light to crack the sky<br/>
+            like truth through an elaborate lie.</p>
+            <p>"Data! Data! I cannot make bricks without clay!"<br/>
+            But give me photons, give me grey<br/>
+            December mornings, fog, and rain—<br/>
+            I'll show you beauty in the plain.</p>
+          </div>
+          <span class="poem-tag">observing</span>
+        </article>
+
+        <article class="poem-card">
+          <div class="poem-decoration">VI</div>
+          <h3 class="poem-title">Anti-Hero (of the Codebase)</h3>
+          <div class="poem-body">
+            <p>It's me, hi, I'm the problem, it's me.<br/>
+            I pushed to main without a PR,<br/>
+            at teatime, everybody agrees—<br/>
+            I broke the build from near and far.</p>
+            <p>But Sherlock said, "The world is full<br/>
+            of obvious things no one observes."<br/>
+            So I observe, I click, I write,<br/>
+            and give the chaos what it deserves.</p>
+          </div>
+          <span class="poem-tag">midnights era</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contact">
+    <div class="container">
+      <h2 class="section-title">Send a Telegram to 221B 📨</h2>
+      <p class="section-subtitle">"You belong with me" — Taylor Swift, and also my inbox, to your message</p>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <h4>Pigeon Post (Email)</h4>
+              <a href="mailto:puja.gaykawad@gmail.com">puja.gaykawad@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">💼</div>
+            <div>
+              <h4>The Professional Network</h4>
+              <a href="https://linkedin.com/in/puja-kumari-7002b8116" target="_blank">linkedin.com/in/puja-kumari</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">�</div>
+            <div>
+              <h4>The Direct Line</h4>
+              <a href="tel:+918838675934">+91 8838675934</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">�</div>
+            <div>
+              <h4>Current Crime Scene</h4>
+              <span style="color: var(--text-primary);">Bengaluru, India</span>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <input type="text" id="name" placeholder=" " required />
+            <label for="name">Your Name (or alias)</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder=" " required />
+            <label for="email">Your Email (I'll deduce the rest)</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" rows="5" placeholder=" " required></textarea>
+            <label for="message">State your case</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>🕵️ Deliver the Message</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Puja Kumari. Built with deduction, Earl Grey, and a long list of ex-frameworks. <em>"The game is on."</em></p>
+    </div>
+  </footer>
+
+  <!-- ===== LIGHTBOX ===== -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <div class="lightbox-content" id="lightboxContent"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
