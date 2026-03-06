@@ -10,19 +10,33 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 </head>
 <body>
+  <!-- 🎬 CINEMATIC PAGE LOADER -->
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-magnifier"></div>
+    <div class="loader-text">Examining evidence...</div>
+  </div>
+
+  <!-- 🔍 CUSTOM CURSOR -->
+  <div class="custom-cursor" id="customCursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- 🔮 CONSTELLATION BACKGROUND -->
+  <canvas class="constellation-canvas" id="constellationCanvas"></canvas>
+
   <!-- ===== NAVBAR ===== -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
       <a href="#hero" class="nav-logo">PK<span class="accent">.</span></a>
+      <span class="morse-badge" title="PK in Morse Code">.--. -.-</span>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="navLinks">
-        <li><a href="#about">Case File</a></li>
-        <li><a href="#skills">Methods</a></li>
-        <li><a href="#gallery">Evidence Wall</a></li>
-        <li><a href="#poetry">Confessions</a></li>
-        <li><a href="#contact">221B Mailbox</a></li>
+        <li><a href="#about">Case File <span class="kbd-hint">1</span></a></li>
+        <li><a href="#skills">Methods <span class="kbd-hint">2</span></a></li>
+        <li><a href="#gallery">Evidence Wall <span class="kbd-hint">3</span></a></li>
+        <li><a href="#poetry">Confessions <span class="kbd-hint">4</span></a></li>
+        <li><a href="#contact">221B Mailbox <span class="kbd-hint">5</span></a></li>
       </ul>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
@@ -60,6 +74,10 @@
       <div class="about-grid">
         <div class="about-image">
           <div class="image-frame">
+            <div class="corner tl"></div>
+            <div class="corner tr"></div>
+            <div class="corner bl"></div>
+            <div class="corner br"></div>
             <img src="images/puja_profile.jpeg" alt="Puja Kumari" style="width: 100%; height: 100%; object-fit: cover;" />
           </div>
         </div>
@@ -560,10 +578,17 @@
     </div>
   </footer>
 
-  <!-- ===== LIGHTBOX ===== -->
+  <!-- ===== LIGHTBOX (CINEMATIC) ===== -->
   <div class="lightbox" id="lightbox">
     <button class="lightbox-close" aria-label="Close">&times;</button>
+    <span class="lightbox-counter" id="lightboxCounter"></span>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous">&#8592;</button>
+    <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next">&#8594;</button>
     <div class="lightbox-content" id="lightboxContent"></div>
+    <div class="lightbox-caption" id="lightboxCaption">
+      <div class="lightbox-title"></div>
+      <div class="lightbox-subtitle"></div>
+    </div>
   </div>
 
   <script src="script.js"></script>
