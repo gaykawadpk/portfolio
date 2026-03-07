@@ -454,6 +454,25 @@ document.addEventListener('keydown', e => {
 const defaultFilter = document.querySelector('.filter-btn.active');
 if (defaultFilter) applyFilter(defaultFilter.getAttribute('data-filter'));
 
+// ── Observation number captions ──────────────────────────────
+// Inject "Observation #NNN" tag into each gallery-item overlay, per-category
+(function addObservationNumbers() {
+  const cats = ['landscape', 'street', 'nature', 'wildlife', 'sky'];
+  cats.forEach(cat => {
+    const items = document.querySelectorAll(`.gallery-item[data-category="${cat}"]`);
+    items.forEach((item, i) => {
+      const overlay = item.querySelector('.gallery-overlay');
+      if (!overlay) return;
+      // Don't add twice
+      if (overlay.querySelector('.obs-number')) return;
+      const tag = document.createElement('span');
+      tag.className = 'obs-number';
+      tag.textContent = `Observation #${String(i + 1).padStart(3, '0')}`;
+      overlay.appendChild(tag);
+    });
+  });
+})();
+
 // Re-snap on resize (slide widths change at breakpoints)
 let resizeTimer;
 window.addEventListener('resize', () => {
@@ -664,30 +683,58 @@ document.addEventListener('keydown', (e) => {
 // 🔍 SECTION TITLE DECODE ANIMATION
 // ============================
 const sectionTitles = document.querySelectorAll('.section-title');
-const cipherChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*()_+-=[]{}|;:,./<>?';
+// Use only letters — avoids unreadable symbol soup like )Y/VU$-N
+const cipherChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 
-sectionTitles.forEach(title => {
+function runDecode(title) {
   const originalText = title.textContent;
-  let isDecoding = false;
+  let iterations = 0;
+  const interval = setInterval(() => {
+    title.textContent = originalText.split('').map((char, idx) => {
+      if (idx < iterations) return originalText[idx];
+      if (char === ' ' || char === '—' || /\p{Emoji}/u.test(char)) return char;
+      return cipherChars[Math.floor(Math.random() * cipherChars.length)];
+    }).join('');
+    iterations += 1.5; // faster: decode ~1.5 chars per tick
+    if (iterations > originalText.length) {
+      clearInterval(interval);
+      title.textContent = originalText;
+    }
+  }, 28); // 28ms per tick → ~0.7s total for a 20-char title
+}
 
+// Auto-decode once on scroll into view
+const titleObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      setTimeout(() => runDecode(entry.target), 200);
+      titleObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.6 });
+sectionTitles.forEach(t => titleObserver.observe(t));
+
+// Also decode on hover (re-entrant safe)
+sectionTitles.forEach(title => {
+  let busy = false;
   title.addEventListener('mouseenter', () => {
-    if (isDecoding) return;
-    isDecoding = true;
-    let iterations = 0;
-    const interval = setInterval(() => {
-      title.textContent = originalText.split('').map((char, idx) => {
-        if (idx < iterations) return originalText[idx];
-        if (char === ' ') return ' ';
+    if (busy) return;
+    busy = true;
+    const orig = title.textContent;
+    let iter = 0;
+    const iv = setInterval(() => {
+      title.textContent = orig.split('').map((char, idx) => {
+        if (idx < iter) return orig[idx];
+        if (char === ' ' || char === '—' || /\p{Emoji}/u.test(char)) return char;
         return cipherChars[Math.floor(Math.random() * cipherChars.length)];
       }).join('');
-
-      iterations += 1;
-      if (iterations > originalText.length) {
-        clearInterval(interval);
-        title.textContent = originalText;
-        isDecoding = false;
+      iter += 1.5;
+      if (iter > orig.length) {
+        clearInterval(iv);
+        title.textContent = orig;
+        busy = false;
       }
-    }, 40);
+    }, 28);
   });
 });
 
