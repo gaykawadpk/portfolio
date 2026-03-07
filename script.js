@@ -341,8 +341,13 @@ let currentIndex   = 0;
 let filteredItems  = [];
 
 function getSlideWidth() {
-  // width of one slide + its gap (CSS gap = 20px)
-  return filteredItems[0] ? filteredItems[0].offsetWidth + 20 : 360;
+  // Read the computed CSS variable — accurate even on resize
+  if (filteredItems[0]) {
+    return filteredItems[0].getBoundingClientRect().width + 20; // 20 = gap
+  }
+  const cssVal = getComputedStyle(document.documentElement)
+    .getPropertyValue('--slide-width').trim();
+  return parseFloat(cssVal) + 20 || 380;
 }
 
 function buildDots(count) {
@@ -357,9 +362,12 @@ function buildDots(count) {
 }
 
 function updateDots(index) {
-  carouselDots.querySelectorAll('.carousel-dot').forEach((d, i) => {
-    d.classList.toggle('active', i === index);
-  });
+  const dots = carouselDots.querySelectorAll('.carousel-dot');
+  dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  // Scroll active dot into view for long sets (e.g. 17 wildlife photos)
+  if (dots[index]) {
+    dots[index].scrollIntoView({ inline: 'center', behavior: 'smooth', block: 'nearest' });
+  }
 }
 
 function updateCounter(index) {
@@ -445,6 +453,18 @@ document.addEventListener('keydown', e => {
 // Apply default on page load
 const defaultFilter = document.querySelector('.filter-btn.active');
 if (defaultFilter) applyFilter(defaultFilter.getAttribute('data-filter'));
+
+// Re-snap on resize (slide widths change at breakpoints)
+let resizeTimer;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    carouselTrack.style.transition = 'none';
+    const offset = currentIndex * getSlideWidth();
+    carouselTrack.style.transform = `translateX(-${offset}px)`;
+    requestAnimationFrame(() => { carouselTrack.style.transition = ''; });
+  }, 120);
+});
 
 // ============================
 // 🎬 CINEMATIC LIGHTBOX
