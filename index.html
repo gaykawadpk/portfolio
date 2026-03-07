@@ -22,6 +22,9 @@
   <meta name="twitter:description" content="7+ years cracking embedded systems like Sherlock cracks cases." />
   <meta name="twitter:image" content="images/puja_profile.jpeg" />
 
+  <!-- Canonical URL (SEO) -->
+  <link rel="canonical" href="https://gaykawadpk.github.io/portfolio/" />
+
   <!-- Favicon (gold magnifying glass) -->
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔍</text></svg>" />
 
@@ -105,7 +108,7 @@
             <div class="corner tr"></div>
             <div class="corner bl"></div>
             <div class="corner br"></div>
-            <img src="images/puja_profile.jpeg" alt="Puja Kumari" style="width: 100%; height: 100%; object-fit: cover;" />
+            <img src="images/puja_profile.jpeg" alt="Puja Kumari — Senior Software Engineer, Photographer and Poet" style="width: 100%; height: 100%; object-fit: cover;" />
           </div>
         </div>
         <div class="about-text">
@@ -293,11 +296,11 @@
       <p class="section-subtitle">"You see, but you do not observe." I observe. And I press the shutter. <a href="https://attheedgeofuniverse.blogspot.com" target="_blank" rel="noopener noreferrer" style="font-size: 0.9rem;">View full gallery →</a></p>
 
       <div class="gallery-filters">
-        <button class="filter-btn active" data-filter="landscape">📁 The Case Files</button>
-        <button class="filter-btn" data-filter="street">🏛️ Baker Street Chronicles</button>
-        <button class="filter-btn" data-filter="nature">🌿 The Moorlands</button>
-        <button class="filter-btn" data-filter="wildlife">🦅 Field Observations</button>
-        <button class="filter-btn" data-filter="sky">🌙 Celestial Notes</button>
+        <button class="filter-btn active" data-filter="landscape">📁 The Case Files <span class="filter-count">5</span></button>
+        <button class="filter-btn" data-filter="street">🏛️ Baker Street Chronicles <span class="filter-count">8</span></button>
+        <button class="filter-btn" data-filter="nature">🌿 The Moorlands <span class="filter-count">14</span></button>
+        <button class="filter-btn" data-filter="wildlife">🦅 Field Observations <span class="filter-count">17</span></button>
+        <button class="filter-btn" data-filter="sky">🌙 Celestial Notes <span class="filter-count">7</span></button>
       </div>
 
       <div class="gallery-grid">
@@ -745,6 +748,19 @@
           </div>
           <span class="poem-tag">wanderlust</span>
         </article>
+
+        <article class="poem-card">
+          <div class="poem-decoration">VII</div>
+          <h3 class="poem-title">Raat Aisi Najar Aati Hai</h3>
+          <div class="poem-body">
+            <p>Aasman tak pahuch apni aur hath me mutthi bhar bhi Jameen nahi,<br/>
+            Shakhshiyat sabko malum hai, Hakikat me to khud ke bhi ham nahi.</p>
+            <p>Hakikat se thodi si dur aur Sapno ke thoda karib,<br/>
+            Din ke bhag daud se alag, wo duniya jo mere ishare pe chalti hai —<br/>
+            Raat aisi najar aati hai.</p>
+          </div>
+          <span class="poem-tag">identity</span>
+        </article>
       </div>
     </div>
   </section>
@@ -753,7 +769,7 @@
   <section class="section contact" id="contact">
     <div class="container">
       <h2 class="section-title">Send a Telegram to 221B 📨</h2>
-      <p class="section-subtitle">"You belong with me" — Taylor Swift, and also my inbox, to your message</p>
+      <p class="section-subtitle">"The game is afoot." — Drop a message, send a clue, or simply say hello. Every great case begins with a first contact.</p>
 
       <div class="contact-grid">
         <div class="contact-info">
@@ -779,13 +795,6 @@
             </div>
           </div>
           <div class="contact-item">
-            <div class="contact-icon">📱</div>
-            <div>
-              <h4>The Direct Line</h4>
-              <a href="tel:+918838675934">+91 8838675934</a>
-            </div>
-          </div>
-          <div class="contact-item">
             <div class="contact-icon">📍</div>
             <div>
               <h4>Current Crime Scene</h4>
@@ -794,17 +803,18 @@
           </div>
         </div>
 
-        <form class="contact-form" id="contactForm">
+        <form class="contact-form" id="contactForm" action="https://formspree.io/f/mdawoyaa" method="POST">
+          <input type="hidden" name="_subject" value="New message from PK Portfolio 🔍" />
           <div class="form-group">
-            <input type="text" id="name" placeholder=" " required />
+            <input type="text" id="name" name="name" placeholder=" " required />
             <label for="name">Your Name (or alias)</label>
           </div>
           <div class="form-group">
-            <input type="email" id="email" placeholder=" " required />
+            <input type="email" id="email" name="email" placeholder=" " required />
             <label for="email">Your Email (I'll deduce the rest)</label>
           </div>
           <div class="form-group">
-            <textarea id="message" rows="5" placeholder=" " required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
             <label for="message">State your case</label>
           </div>
           <button type="submit" class="btn btn-primary btn-full">
@@ -819,6 +829,13 @@
   <!-- ===== FOOTER ===== -->
   <footer class="footer">
     <div class="container">
+      <div class="footer-links">
+        <a href="mailto:puja.gaykawad@gmail.com" aria-label="Email" title="Email">📧</a>
+        <a href="https://linkedin.com/in/puja-kumari-7002b8116" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" title="LinkedIn">💼</a>
+        <a href="https://github.com/gaykawadpk" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub">🐙</a>
+        <a href="https://attheedgeofuniverse.blogspot.com" target="_blank" rel="noopener noreferrer" aria-label="Photography Blog" title="Photography Blog">📸</a>
+        <a href="https://tellinguntoldstory.blogspot.com" target="_blank" rel="noopener noreferrer" aria-label="Poetry Blog" title="Poetry Blog">🕯️</a>
+      </div>
       <p>&copy; 2026 Puja Kumari. Built with deduction, Earl Grey, and a long list of ex-frameworks. <em>"The game is on."</em></p>
     </div>
   </footer>
@@ -841,6 +858,6 @@
     </div>
   </div>
 
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </body>
 </html>

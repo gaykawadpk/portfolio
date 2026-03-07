@@ -591,37 +591,60 @@ magneticBtns.forEach(btn => {
 });
 
 // ============================
-// Contact Form
+// Contact Form (Formspree AJAX)
 // ============================
 const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
+contactForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = contactForm.querySelector('button');
   const originalHTML = btn.innerHTML;
-  btn.innerHTML = '<span>🔍 Case Received! The game is on.</span>';
-  btn.style.background = '#22c55e';
+  btn.innerHTML = '<span>🔍 Sending...</span>';
   btn.disabled = true;
 
-  for (let i = 0; i < 20; i++) {
-    const confetti = document.createElement('div');
-    confetti.style.cssText = `
-      position: fixed; width: 8px; height: 8px; border-radius: 50%;
-      background: ${['#c9a84c','#e0c56a','#ffd700','#fff'][Math.floor(Math.random()*4)]};
-      top: ${btn.getBoundingClientRect().top}px;
-      left: ${btn.getBoundingClientRect().left + Math.random() * btn.offsetWidth}px;
-      z-index: 9999; pointer-events: none;
-      animation: confettiFall 1s ease-out forwards;
-    `;
-    document.body.appendChild(confetti);
-    setTimeout(() => confetti.remove(), 1000);
-  }
+  try {
+    const response = await fetch(contactForm.action, {
+      method: 'POST',
+      body: new FormData(contactForm),
+      headers: { 'Accept': 'application/json' }
+    });
 
-  setTimeout(() => {
-    btn.innerHTML = originalHTML;
-    btn.style.background = '';
-    btn.disabled = false;
-    contactForm.reset();
-  }, 3000);
+    if (response.ok) {
+      btn.innerHTML = '<span>✅ Case Received! The game is on.</span>';
+      btn.style.background = '#22c55e';
+
+      // Confetti celebration
+      for (let i = 0; i < 24; i++) {
+        const confetti = document.createElement('div');
+        confetti.style.cssText = `
+          position: fixed; width: 8px; height: 8px; border-radius: 50%;
+          background: ${['#c9a84c','#e0c56a','#ffd700','#fff'][Math.floor(Math.random()*4)]};
+          top: ${btn.getBoundingClientRect().top}px;
+          left: ${btn.getBoundingClientRect().left + Math.random() * btn.offsetWidth}px;
+          z-index: 9999; pointer-events: none;
+          animation: confettiFall 1s ease-out forwards;
+        `;
+        document.body.appendChild(confetti);
+        setTimeout(() => confetti.remove(), 1000);
+      }
+
+      setTimeout(() => {
+        btn.innerHTML = originalHTML;
+        btn.style.background = '';
+        btn.disabled = false;
+        contactForm.reset();
+      }, 3000);
+    } else {
+      throw new Error('Form submission failed');
+    }
+  } catch {
+    btn.innerHTML = '<span>❌ Something went wrong. Try emailing directly.</span>';
+    btn.style.background = '#ef4444';
+    setTimeout(() => {
+      btn.innerHTML = originalHTML;
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 3000);
+  }
 });
 
 const confettiStyle = document.createElement('style');

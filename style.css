@@ -710,6 +710,25 @@ img { max-width: 100%; display: block; }
   border-color: var(--accent);
 }
 
+.filter-count {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: inherit;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 1px 7px;
+  border-radius: 10px;
+  margin-left: 6px;
+  vertical-align: middle;
+  line-height: 1.5;
+  transition: background 0.3s;
+}
+
+.filter-btn:not(.active) .filter-count {
+  background: var(--border-hover);
+  color: var(--text-muted);
+}
+
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -984,6 +1003,26 @@ img { max-width: 100%; display: block; }
   font-size: 0.9rem;
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 16px;
+}
+
+.footer-links a {
+  font-size: 1.4rem;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.3s, transform 0.3s var(--ease-spring);
+  display: inline-block;
+}
+
+.footer-links a:hover {
+  opacity: 1;
+  transform: translateY(-4px) scale(1.2);
+}
+
 /* ============================
    Scroll Reveal Animations
    ============================ */
@@ -1147,7 +1186,7 @@ img { max-width: 100%; display: block; }
   padding-top: 140px;
 }
 .poetry::before {
-  content: "\201CKuchh aadaten kabhi badli nahi ja sakti, aur tumhe yad karna unme se ek hai.\201D";
+  content: "\201CJab ham nahi rahenge to mere alfaj yaad aaenge.\201D";
   position: absolute;
   top: 40px;
   left: 0;
