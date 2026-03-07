@@ -688,15 +688,17 @@ const cipherChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 
 function runDecode(title, onDone) {
   const originalText = title.textContent;
+  const chars = Array.from(originalText); // Unicode-safe split (handles emoji codepoints)
+  const total = chars.length;
   let iterations = 0;
   const interval = setInterval(() => {
-    title.textContent = originalText.split('').map((char, idx) => {
-      if (idx < iterations) return originalText[idx];
+    title.textContent = chars.map((char, idx) => {
+      if (idx < iterations) return chars[idx];
       if (char === ' ' || char === '—' || /\p{Emoji}/u.test(char)) return char;
       return cipherChars[Math.floor(Math.random() * cipherChars.length)];
     }).join('');
     iterations += 1.5;
-    if (iterations > originalText.length) {
+    if (iterations > total) {
       clearInterval(interval);
       title.textContent = originalText;
       if (onDone) onDone();
