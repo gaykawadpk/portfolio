@@ -681,12 +681,12 @@ document.addEventListener('keydown', (e) => {
 
 // ============================
 // 🔍 SECTION TITLE DECODE ANIMATION
+// Fires on hover only — clean cipher effect using letters/digits only
 // ============================
 const sectionTitles = document.querySelectorAll('.section-title');
-// Use only letters — avoids unreadable symbol soup like )Y/VU$-N
 const cipherChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 
-function runDecode(title) {
+function runDecode(title, onDone) {
   const originalText = title.textContent;
   let iterations = 0;
   const interval = setInterval(() => {
@@ -695,46 +695,21 @@ function runDecode(title) {
       if (char === ' ' || char === '—' || /\p{Emoji}/u.test(char)) return char;
       return cipherChars[Math.floor(Math.random() * cipherChars.length)];
     }).join('');
-    iterations += 1.5; // faster: decode ~1.5 chars per tick
+    iterations += 1.5;
     if (iterations > originalText.length) {
       clearInterval(interval);
       title.textContent = originalText;
+      if (onDone) onDone();
     }
-  }, 28); // 28ms per tick → ~0.7s total for a 20-char title
+  }, 28);
 }
 
-// Auto-decode once on scroll into view
-const titleObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      setTimeout(() => runDecode(entry.target), 200);
-      titleObserver.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.6 });
-sectionTitles.forEach(t => titleObserver.observe(t));
-
-// Also decode on hover (re-entrant safe)
 sectionTitles.forEach(title => {
   let busy = false;
   title.addEventListener('mouseenter', () => {
     if (busy) return;
     busy = true;
-    const orig = title.textContent;
-    let iter = 0;
-    const iv = setInterval(() => {
-      title.textContent = orig.split('').map((char, idx) => {
-        if (idx < iter) return orig[idx];
-        if (char === ' ' || char === '—' || /\p{Emoji}/u.test(char)) return char;
-        return cipherChars[Math.floor(Math.random() * cipherChars.length)];
-      }).join('');
-      iter += 1.5;
-      if (iter > orig.length) {
-        clearInterval(iv);
-        title.textContent = orig;
-        busy = false;
-      }
-    }, 28);
+    runDecode(title, () => { busy = false; });
   });
 });
 
